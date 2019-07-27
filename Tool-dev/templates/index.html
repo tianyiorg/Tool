@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tool Machine Management System</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/index.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static",filename="css/jquery.pagination.css") }}">
+    <script src="{{ url_for("static",filename="js/jquery-1.12.4.min.js") }}"></script>
+    <script src="{{ url_for("static",filename="js/jquery.pagination.min.js") }}"></script>
+</head>
+<body>
+{% block contentBlock %}
+    <div>
+        <h1>Tool Machine Management System V1.0</h1>
+    </div>
+    <div class="btn">
+        <input type="text" placeholder="请输入机台名字"/>
+        <a href="#"><input type="submit" value="查询"/></a>
+    </div>
+    <div>
+        <h3>Tool Machine Record List</h3>
+        <table class="table">
+            <tr>
+                <th><label for="tool_area">区&nbsp&nbsp;域</label></th>
+                <th><label for="tool_id">机台名字</label></th>
+                <th><label for="host_name">主机名字</label></th>
+                <th><label for="vnc_password">VNC密码</label></th>
+                <th><label for="ip">IP地址</label></th>
+                <th><label for="os">操作系统</label></th>
+                <th><label for="av">杀毒软件</label></th>
+                <th><label for="usb">禁用USB</label></th>
+                <th><label for="dvd">禁用光驱</label></th>
+                <th><label for="floppy">禁用软驱</label></th>
+                <th><label for="ams">AMS更新</label></th>
+                <th><label for="remark">备注信息</label></th>
+                <th><label for="action">操作</label></th>
+            </tr>
+            {% for info in data.tool_info %}
+                <tr>
+                    <td>{{ info.tool_area }}</td>
+                    <td>{{ info.tool_id }}</td>
+                    <td>{{ info.host_name }}</td>
+                    <td>{{ info.vnc }}</td>
+                    <td>{{ info.ip }}</td>
+                    <td>{{ info.os }}</td>
+                    <td>{{ info.av }}</td>
+                    <td>{{ info.usb }}</td>
+                    <td>{{ info.dvd }}</td>
+                    <td>{{ info.floppy }}</td>
+                    <td>{{ info.ams }}</td>
+                    <td>{{ info.remark }}</td>
+                    <td><a href="./modify.html" target="_blank">{{ form.submit }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id="pagination" class="page"></div>
+    <script>
+        $(function () {
+            $("#pagination").pagination({
+                currentPage: {{ data.current_page }},
+                totalPage: {{ data.total_page }},
+                callback: function (current) {
+                    location.href = "/?page=" + current
+                }
+            });
+        });
+    </script>
+{% endblock %}
+</body>
+</html>

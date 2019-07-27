@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block contentBlock %}
+    <h1>Helpdesk Tool Machine Management System V1.0</h1>
+    <div>
+            <ul>
+                <li>{{ form.tool_area.label }}{{ form.tool_area }}</li>
+                <li>{{ form.tool_id.label }}{{ form.tool_id }}</li>
+                <li>{{ form.host_name.label }}{{ form.host_name }}</li>
+                <li>{{ form.vnc_password.label }}</li>
+                <li>{{ form.ip.label }}</li>
+                <li>{{ form.os.label }}</li>
+                <li>{{ form.av.label }}</li>
+                <li>{{ form.usb.label }}</li>
+                <li>{{ form.dvd.label }}</li>
+                <li>{{ form.floppy.label }}</li>
+                <li>{{ form.ams.label }}</li>
+                <li>{{ form.remark.label }}</li>
+            </ul>
+    </div>
+{% endblock %}

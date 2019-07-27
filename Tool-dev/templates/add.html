@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block contentBlock %}
+    <h1>Helpdesk Tool Machine Management System V1.0</h1>
+    <div>
+        <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            {{ form.tool_area.label }}{{ form.tool_area }}
+            {{ form.tool_id.label }}{{ form.tool_id }}
+            {{ form.host_name.label }}{{ form.host_name }}
+            {{ form.vnc_password.label }}
+            {{ form.ip.label }}
+            {{ form.os.label }}
+            {{ form.av.label }}
+            {{ form.usb.label }}
+            {{ form.dvd.label }}
+            {{ form.floppy.label }}
+            {{ form.ams.label }}
+            {{ form.remark.label }}
+            {{ form.submit1 }}
+            {% for message in get_flashed_messages %}
+                {{ message }}
+            {% endfor %}
+
+        </form>
+    </div>
+{% endblock %}

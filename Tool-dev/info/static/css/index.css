@@ -1,0 +1,74 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h3 {
+    background-color: #07668E;
+    color: white;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.btn {
+    float: right;
+}
+
+.table {
+    border: solid black;
+    border-width: 1px;
+    text-align: center;
+    margin-top: -10px;
+    margin-left: 0px;
+    width: 100%;
+    border-collapse: collapse;
+    /*position: absolute;*/
+}
+
+.table th {
+    font-size: 22px;
+    border: 1px solid black;
+    /*border-width: 1px;*/
+}
+
+.table td {
+    font-size: 20px;
+    border: 1px solid black;
+    /*border-width: 1px;*/
+}
+
+.pagination {
+    padding: 0px;
+    list-style: none;
+    width: 960px;
+    height: 40px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 0px;
+}
+
+.pagination li {
+    display: inline-block;
+    height: 26px;
+    font-size: 12px;
+    margin: 7px 5px 0px;
+}
+
+.pagination a {
+    line-height: 26px;
+    text-decoration: none;
+    color: #393c35;
+    display: block;
+    padding: 0px 10px;
+    border: 1px solid #d1d1d1;
+}
+
+.pagination a:hover {
+    background: #f80;
+    color: #fff;
+}
+
+.ui-pagination-container {
+    text-align: center;
+    margin-top: 5px;
+}
